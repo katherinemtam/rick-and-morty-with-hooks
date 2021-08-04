@@ -8,7 +8,6 @@ const RickAndMorty = () => {
 
   useEffect(async () => {
     const characters = await fetchCharacters();
-    console.log(characters);
     setCharacters(characters);
     setLoading(false);
   }, []);
