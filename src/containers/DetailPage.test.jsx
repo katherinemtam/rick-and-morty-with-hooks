@@ -3,7 +3,7 @@ import { render, screen, waitFor } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import { MemoryRouter } from 'react-router-dom';
-import RickAndMorty from './RickAndMorty';
+import DetailPage from './DetailPage';
 
 const server = setupServer(
   rest.get(
@@ -36,15 +36,14 @@ describe('RickyAndMorty container', () => {
   beforeAll(() => server.listen());
   afterAll(() => server.close());
 
-  test('renders RickAndMorty container with a list characters', async () => {
-    render(<MemoryRouter><RickAndMorty/></MemoryRouter>); 
+  test('renders RickAndMorty container', async () => {
+    render(<MemoryRouter><DetailPage/></MemoryRouter>); 
     
     screen.getByText('Loading...');
 
-    // return waitFor(async () => {
-    const ul = await screen.findByRole('list');
-    expect(ul.children.length).toEqual(10);
-    // }, 5000);
+    return waitFor(async () => {
+      screen.findByText('Status: Alive');
+    }, 5000);
   });
 });
 

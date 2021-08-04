@@ -18,8 +18,6 @@ const CharacterList = ({ characters }) => (
   </ul>
 );
 
-
-
 CharacterList.propTypes = {
   characters: PropTypes.arrayOf(
     PropTypes.shape({
