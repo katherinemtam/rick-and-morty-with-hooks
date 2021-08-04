@@ -15,7 +15,7 @@ const RickAndMorty = () => {
   if(loading) return <h1>Loading...</h1>;
   return (
     <>
-      <h1>hello!</h1>
+      <h1>10 Random Rick and Morty Characters</h1>
       <CharacterList characters={characters}/>
     </>
   );
