@@ -11,7 +11,6 @@ const CharacterList = ({ characters }) => (
           <Character 
             name={character.name}
             image={character.image}
-            species={character.species}
           />
         </li>
       </Link>
