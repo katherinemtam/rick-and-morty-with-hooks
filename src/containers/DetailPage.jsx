@@ -15,7 +15,15 @@ const DetailPage = () => {
   }, [id]);
 
   if(loading) return <h1>Loading...</h1>;
-  return <CharacterDetail {...character}/>;
+  return <CharacterDetail
+    name={character.name}
+    status={character.status}
+    species={character.species}
+    type={character.type}
+    gender={character.gender}
+    origin={character.origin.name}
+    location={character.location.name}
+    image={character.image}/>;
 };
 
 export default DetailPage; 

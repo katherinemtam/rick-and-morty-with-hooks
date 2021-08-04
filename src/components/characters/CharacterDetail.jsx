@@ -11,8 +11,8 @@ const CharacterDetail = ({ name, status, species, type, gender, origin, location
       <p>Species: {species}</p>
       <p>Type: {type}</p>
       <p>Gender: {gender}</p>
-      <p>Origin: {origin.name}</p>
-      <p>Location: {location.name}</p>
+      <p>Origin: {origin}</p>
+      <p>Location: {location}</p>
     </figcaption>
     <Link to="/">Return Home</Link>
   </figure>
@@ -24,8 +24,8 @@ CharacterDetail.propTypes = {
   species: PropTypes.string,
   type: PropTypes.string,
   gender: PropTypes.string,
-  origin: PropTypes.object,
-  location: PropTypes.object,
+  origin: PropTypes.string,
+  location: PropTypes.string,
   image: PropTypes.string,
 };
 
