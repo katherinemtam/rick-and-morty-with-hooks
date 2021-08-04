@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const CharacterDetail = ({ name, status, species, type, gender, origin, location, image }) => (
   <figure>
@@ -8,11 +9,12 @@ const CharacterDetail = ({ name, status, species, type, gender, origin, location
     <figcaption>
       <p>Status: {status}</p>
       <p>Species: {species}</p>
-      <p>Type: {type ? { type } : 'N/A'}</p>
+      <p>Type: {type}</p>
       <p>Gender: {gender}</p>
       <p>Origin: {origin.name}</p>
       <p>Location: {location.name}</p>
     </figcaption>
+    <Link to="/">Return Home</Link>
   </figure>
 );
 
