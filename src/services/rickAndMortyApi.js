@@ -1,8 +1,14 @@
-export const fetchCharacters = async () => {
-  const res = await fetch('https://rickandmortyapi.com/api/character');
-  const json = await res.json();
+const randomArray = (length = 10, max = 671) => [...new Array(length)].map(() => Math.round(Math.random() * max));
 
-  return json.results;
+export const fetchCharacters = async () => {
+
+  const arr = randomArray();
+  const results = await Promise.all(arr.map(async characterId => {
+    const res = await fetchCharacter(characterId);
+    return res;
+  }));
+
+  return results;
 };
 
 export const fetchCharacter = async (id) => {
